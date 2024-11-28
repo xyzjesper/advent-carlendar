@@ -106,30 +106,32 @@ export default function DoorPage() {
 
   if (day?.date && day.date > new Date().toISOString().split("T")[0]) {
     return (
-      <div className="p-11 min-h-screen flex items-center justify-center text-white">
-        <h1 className="text-3xl">
-          Holter die Polter!!!
-          <br />
-          Heute ist noch nicht der Tag, um dieses Tür
-          <br />
-          zu öffnen! 🎅🎄
-        </h1>
-        <div>
-          <button
-            onClick={() => window.open(`/${day.id - 1}`, "_self")}
-            className="mt-6 px-6 py-3 bg-gray-600 rounded-lg shadow-lg hover:bg-gray-500"
-          >
-            Zum {day.id - 1}. Türchen
-          </button>
-
-          <button
-            onClick={() => window.open("/", "_self")}
-            className="mt-6 px-6 py-3 bg-gray-600 rounded-lg shadow-lg hover:bg-gray-500"
-          >
-            Zurück zum Kalender
-          </button>
+      <>
+        <div className="p-11 min-h-screen flex items-center justify-center text-gray-900 bg-gradient-to-b from-green-500 to-red-600">
+          <h1 className="text-3xl">
+            Holter die Polter!!!
+            <br />
+            Heute ist noch nicht der Tag, um dieses Tür
+            <br />
+            zu öffnen! 🎅🎄
+          </h1>
+          <div className="p-10 mt-10">
+            <button
+              onClick={() => window.open(`/${day.id - 1}`, "_self")}
+              className="mt-6 px-6 py-3 bg-gray-600 rounded-lg shadow-lg hover:bg-gray-500"
+            >
+              Zum {day.id - 1}. Türchen
+            </button>
+            <br></br>
+            <button
+              onClick={() => window.open("/", "_self")}
+              className="mt-6 px-6 py-3 bg-gray-600 rounded-lg shadow-lg hover:bg-gray-500"
+            >
+              Zurück zum Kalender
+            </button>
+          </div>
         </div>
-      </div>
+      </>
     );
   }
 
