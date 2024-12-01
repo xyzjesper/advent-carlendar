@@ -88,7 +88,7 @@ export default function Home() {
 
   const handleOpenDoor = async (id: number) => {
     const day = calendar.find((entry) => entry.id === id);
-    if (day && ((!day.isOpen && today >= day.date) || day.isOpen)) {
+    if (today == day.date || day.isOpen) {
       await fetch("/api/update-door", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
