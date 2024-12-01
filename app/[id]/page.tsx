@@ -104,7 +104,7 @@ export default function DoorPage() {
     );
   }
 
-  if (day?.date && day.date > new Date().toISOString().split("T")[0]) {
+  if (day?.date && day.date == new Date().toISOString().split("T")[0] || day.isOpen) {
     return (
       <>
         <div className="p-11 min-h-screen flex items-center justify-center text-gray-900 bg-gradient-to-b from-green-500 to-red-600">
